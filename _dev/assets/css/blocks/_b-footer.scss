@@ -1,0 +1,25 @@
+/**
+ * FOOTER
+ *
+.site-footer {}
+.site-footer__copyright {}
+.site-footer__list {}
+.site-footer__item {}
+.site-footer__link {}
+ */
+
+.site-footer {}
+.site-footer__copyright {}
+.site-footer__list {
+  @extend %list-style-none;
+
+  text-align: center;
+}
+
+.site-footer__item {
+  display: inline-block;
+}
+
+.site-footer__link {
+  font-size: $type--small;
+}

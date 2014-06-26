@@ -1,0 +1,47 @@
+.btn {
+  @extend %font-heading;
+  border: 1px solid $color--blue;
+  border-radius: 3px;
+  color: $color--white;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3),
+        inset 0 0   1px $color--blue;
+  font-weight: 400;
+  padding: $gutter--narrow $gutter--normal;
+
+  @include vertical-gradient($color--blue, $color--blue);
+}
+
+.btn:hover {
+  background-image: none;
+  background-color: $color--blue;
+}
+
+.btn:active {
+  box-shadow: inset 0 1px 0 $color--blue;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  @include vertical-gradient($color--blue, $color--blue);
+}
+
+.btn--hollow {
+  background-color: rgba(0,0,0,0);
+  background-image: none;
+  border: 1px solid $color--gray-lighter;
+  color: $color--gray-lighter;
+
+  box-shadow: none;
+}
+
+.btn--hollow:hover {
+  background-color: transparent;
+  border-color: $color--red;
+  color: $color--red;
+}
+
+.btn--hollow:active {
+  background-image: none;
+  background-color: rgba(0,0,0,0.15);
+}
+
+.btn--clear {
+  float: right;
+}

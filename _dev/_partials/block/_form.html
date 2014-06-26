@@ -1,0 +1,165 @@
+<form class="entry-form  controls-stacked"
+      name="entry-form" method="post" action="./complete.php">
+
+  <div class="entry-form__region">
+    <h3 class="entry-form__question">Other than your home layout, in order of preference, what are your three favourite courses in <!-- $province -->?</h3>
+
+
+    <label class="entry-form__label"
+           for="favourite_three__0"><i>1.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="favourite_three__0"
+             name="favourite_three[0]"
+             placeholder=""
+             autocomplete="true"
+             required="true"
+             message="Please enter a favourite course from <!-- $province -->" />
+    </label>
+
+    <label class="entry-form__label"
+           for="favourite_three__1"><i>2.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="favourite_three__1"
+             name="favourite_three[1]"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+
+    <label class="entry-form__label"
+           for="favourite_three__2"><i>3.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="favourite_three__2"
+             name="favourite_three[2]"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+  </div>
+
+
+  <div class="entry-form__region">
+    <h3 class="entry-form__question">Other than your home layout and three favourites in <!-- $province --> already selected, in order of preference, what are your two favourite LOCAL courses (within three hours drive time from your home)?</h3>
+
+    <label class="entry-form__label"
+           for="local_two__0"><i>1.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="local_two__0"
+             name="local_two__0"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+
+    <label class="entry-form__label"
+           for="local_two__1"><i>2.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="local_two__1"
+             name="local_two__1"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+  </div>
+
+  <div class="entry-form__region">
+    <h3 class="entry-form__question"> In no particular order, pick up to three "Hidden Gems" anywhere in <!-- $province --> that you think deserve higher recognition:</h3>
+
+    <label class="entry-form__label"
+           for="hidden_gem__0"><i>1.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="hidden_gem__0"
+             name="hidden_gem__0"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+
+    <label class="entry-form__label"
+           for="hidden_gem__1"><i>2.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="hidden_gem__1"
+             name="hidden_gem__1"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+
+    <label class="entry-form__label"
+           for="hidden_gem__2"><i>3.</i>
+      <input class="entry-form__text"
+             type="text"
+             id="hidden_gem__2"
+             name="hidden_gem__2"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+  </div>
+
+  <div class="entry-form__region">
+    <label class="entry-form__question"
+           for="best_manicure">Other than your own home course, what local course (within three hours drive from your home) do you think is the best manicured?
+      <input class="entry-form__text"
+             type="text"
+             id="best_manicure"
+             name="best_manicure"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+  </div>
+
+  <div class="entry-form__region">
+    <h3 class="entry-form__question">Please provide your PGA of BC ID# and your Town of Residence during the golf season. If your ID# is not available, your name can be used.  Note: This information is only used to identify who has taken the survey and is kept independently of your selections.</h3>
+
+    <label class="entry-form__label--stack"
+           for="location"><i>Town of Residence During Golf Season:</i>
+      <input class="entry-form__text"
+             type="text"
+             id="location"
+             name="location"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+
+    <label class="entry-form__label--stack"
+           for="pga_id"><i>PGA of BC ID#:</i>
+      <input class="entry-form__text"
+             type="text"
+             id="pga_id"
+             name="pga_id"
+             placeholder=""
+             autocomplete="true"
+             required="true" >
+    </label>
+  </div>
+
+  <div class="entry-form__region">
+    <label class="entry-form__question"
+           for="hidden_gem">Would you like to receive information on becoming an official <i>Course Rater</i>? Raters will do more complete evaluations of individual courses. If so please enter your email address below&hellip;
+      <input class="entry-form__text"
+             type="email"
+             id="email"
+             name="email"
+             placeholder=""
+             autocomplete="true" />
+    </label>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-success">Complete your survey</button>
+
+  <button type="reset" class="btn btn--hollow">Clear Form</button>
+  <input type="hidden" value="BC" name="state" id="state" />
+</form>
+

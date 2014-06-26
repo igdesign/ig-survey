@@ -1,0 +1,165 @@
+/**
+ * Fields
+ *
+
+ .entry-form {}
+   .entry-form__region {}
+     .entry-form__quesion {}
+     .entry-form__label {}
+       .entry-form__text {}
+       .entry-form__radio {}
+ */
+
+.entry-form__region {
+  margin: $gutter--normal 0;
+}
+
+.entry-form__question {
+  @extend %font-heading;
+  line-height:1.35;
+
+  font-weight: normal;
+  font-size: $type--base;
+  font-style: normal;
+
+}
+
+.entry-form__question input {
+  display: block;
+  margin-top: $gutter--skinny;
+  width: 100%;
+}
+
+.entry-form__label {
+  @extend %font-heading;
+  display: block;
+  margin: $gutter--narrow 0;
+  width: 100%;
+}
+
+.entry-form__label i {
+  width: 6%;
+  display: inline-block;
+  margin-right: 2%;
+  text-align: right;
+}
+
+.entry-form__label--stack {
+  @extend .entry-form__label;
+
+}
+
+.entry-form__label--stack input {
+  width: 100%;
+}
+
+.entry-form__label--stack i {
+  width: 100%;
+  display: block;
+  text-align: left;
+}
+
+input:focus,
+.btn:focus {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $color--blue;
+  outline: none;
+}
+
+.entry-form__text {
+  border: 2px solid $color--gray-lighter;
+  padding: $gutter--skinny $gutter--narrow;
+  width: 90%;
+}
+
+
+/*
+ * Checkboxes and radios
+ */
+.control {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+.control input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+.control-indicator {
+  position: absolute;
+  top: .25rem;
+  left: 0;
+  display: block;
+  width:  1rem;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  background-color: #eee;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+          user-select: none;
+}
+
+/* Hover state */
+/* Uncomment if you need it, but be aware of the sticky iOS states.
+.control:hover .control-indicator {
+  color: #fff;
+  background-color: #ccc;
+}
+*/
+
+/* Focus */
+.control input:focus ~ .control-indicator {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $color--blue;
+}
+
+/* Checked state */
+.control input:checked ~ .control-indicator {
+  color: #fff;
+  background-color: $color--blue;
+}
+
+/* Active */
+.control input:active ~ .control-indicator {
+  color: #fff;
+  background-color: $color--blue;
+}
+
+/* Radio modifiers */
+.radio .control-indicator {
+  border-radius: 50%;
+}
+.radio input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+
+
+/*
+ * Control layouts
+ */
+
+.controls-stacked {
+  margin: 1rem 0;
+}
+.controls-stacked .control,
+.controls-stacked .progress {
+  display: block;
+}
+.controls-stacked .control + .control,
+.controls-stacked .progress + .progress {
+  margin-top: .5rem;
+}
+
+.controls-inline {
+  margin: 1rem 0;
+}
+.controls-inline .control {
+  display: inline-block;
+  height: 1rem;
+}
+.controls-inline .control + .control {
+  margin-left: 1rem;
+}

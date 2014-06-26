@@ -1,0 +1,38 @@
+/**
+ * HEADER
+ *
+  .site-header {}
+    .site-name {}
+    .page-title {}
+ */
+
+
+
+
+.page-title {
+  display: none;
+}
+
+.site-header {
+   width: 100%; // whatever width you want
+   max-width: 728px;
+   display: inline-block;
+   position: relative;
+}
+
+.site-header:after {
+  padding-top: 56.25%; // 16:9 ratio
+  display: block;
+  content: '';
+}
+.site-name {
+  @extend %ir;
+
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0; // fill parent
+
+  background-image: url('./assets/img/bc-header.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
