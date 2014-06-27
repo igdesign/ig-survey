@@ -1,0 +1,25 @@
+<?php
+  class Configuration
+  {
+    var $dev = true; // set false on live
+
+    var $site_url = ''; // no http
+
+    var $getPassword = '';
+
+    // Database
+    var $db_host  = ''; // '127.0.0.1'; // database host
+    var $db_user  = ''; // database user
+    var $db_pass  = ''; // user password
+    var $db_file  = ''; // database table
+
+    // Mandrill
+    var $md_api_key    = ''; // Mandrill API Key
+    var $md_base_url   = 'https://mandrillapp.com/api/1.0/'; // Mandril URL
+    var $md_from_email = ''; // Sending email address
+    var $md_from_name  = ''; // From name for email
+    var $md_bcc_email  = ''; // BCC email address
+    var $md_bcc_name   = ''; // BCC Name
+
+  }
+?>
