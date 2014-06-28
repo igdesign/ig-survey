@@ -45,3 +45,11 @@
 .btn--clear {
   float: right;
 }
+
+
+.thank-you .btn-success {
+  margin-top: -$gutter--narrow;
+  background-image: none;
+  border: none;
+  background-color: $color--green;
+}
