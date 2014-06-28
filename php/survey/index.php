@@ -13,7 +13,7 @@ if (!isset($_SERVER['HTTP_ORIGIN'])) {
 
 if ($config->dev === true) {
   header('Access-Control-Allow-Origin: *');
-  header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+  header('Access-Control-Allow-Methods: GET, POST');
   header('Access-Control-Max-Age: 1000');
   header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 
@@ -35,49 +35,8 @@ if ($config->dev === true) {
 
 
 
+
 $method = $_SERVER['REQUEST_METHOD'];
-
-
-
-
-
-
-// TEMPORARY
-/* $method = 'GET'; */
-/*
-$_POST = array('favourite_three' => array(
-                 'apples'
-               , 'oranges'
-               , 'bananas'
-               )
-
-             , 'local_two' => array(
-                 'cliffs over maple bay'
-               , 'cowichan'
-               )
-
-             , 'hidden_gem' => array(
-                 'quartz'
-               , 'amethyst'
-               , 'garnet'
-               )
-
-             , 'best_manicure' => 'Matisse'
-             , 'location' => 'Duncan, BC'
-             , 'pga_id'   => '1234567890'
-             , 'email'    => 'gregdaynes@gmail.com'
-             , 'state'    => 'BC'
-
-             );
-*/
-// TEMPORARY
-
-
-
-
-
-
-
 switch ($method)
 {
   case 'POST':
@@ -99,13 +58,20 @@ function recordData()
   $survey = new SurveyFunctions();
 
   // check post data
-  $survey->verifyPost($_POST);
+  $survey->verifyPost();
 
   // store entry
   $survey->storePost();
 
   // send email response
-/*   $survey->sendMail(); */ // Temporary comment out
+  $survey->sendMail(); // Temporary comment out
+
+  // respond that we have stored the data
+  unset($survey->post['jsondata']);
+
+  echo  stripslashes(json_encode($survey->post));
+
+  return;
 }
 
 
@@ -117,7 +83,7 @@ function processRequest()
     $survey = new SurveyFunctions();
     $location = $survey->getLocation();
 
-    echo json_encode($location);
+    echo $location;
     return;
   }
 

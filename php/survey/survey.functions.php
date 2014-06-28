@@ -60,8 +60,15 @@ class SurveyFunctions
    *
    * check data submitted
    */
-  public function verifyPost($post = array())
+  public function verifyPost()
   {
+    $post = $_POST;
+
+    if (!isset($post['email']))
+    {
+      $post['email'] = '';
+    }
+
     $data = array();
 
     $data['datetime'] = date("Y-m-d H:i:s");
