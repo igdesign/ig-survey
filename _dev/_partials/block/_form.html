@@ -1,5 +1,8 @@
 <form class="entry-form  controls-stacked"
-      name="entry-form" method="post" action="./complete.php">
+      name="entry-form"
+      id="entryForm"
+      method="post"
+      action="http://php.igdesign.ca/survey.php" >
 
   <div class="entry-form__region">
     <h3 class="entry-form__question">Other than your home layout, in order of preference, what are your three favourite courses in <!-- $province -->?</h3>
@@ -13,8 +16,8 @@
              name="favourite_three[0]"
              placeholder=""
              autocomplete="true"
-             required="true"
-             message="Please enter a favourite course from <!-- $province -->" />
+             message="Please enter a favourite course from <!-- $province -->"
+             required >
     </label>
 
     <label class="entry-form__label"
@@ -25,7 +28,7 @@
              name="favourite_three[1]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
 
     <label class="entry-form__label"
@@ -36,7 +39,7 @@
              name="favourite_three[2]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
   </div>
 
@@ -52,7 +55,7 @@
              name="local_two[0]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
 
     <label class="entry-form__label"
@@ -63,7 +66,7 @@
              name="local_two[1]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
   </div>
 
@@ -78,7 +81,7 @@
              name="hidden_gem[0]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
 
     <label class="entry-form__label"
@@ -89,7 +92,7 @@
              name="hidden_gem[1]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
 
     <label class="entry-form__label"
@@ -100,7 +103,7 @@
              name="hidden_gem[2]"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
   </div>
 
@@ -113,7 +116,7 @@
              name="best_manicure"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
   </div>
 
@@ -128,7 +131,7 @@
              name="location"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
 
     <label class="entry-form__label--stack"
@@ -139,7 +142,7 @@
              name="pga_id"
              placeholder=""
              autocomplete="true"
-             required="true" >
+             required >
     </label>
   </div>
 
@@ -156,10 +159,10 @@
   </div>
 
 
-
-  <button type="submit" class="btn btn-success">Complete your survey</button>
-
-  <button type="reset" class="btn btn--hollow">Clear Form</button>
+  <span class="center-me">
+    <button type="submit" class="btn btn-success">Complete your survey</button>
+    <button type="reset" class="btn btn--hollow">Clear Form</button>
+  </span>
   <input type="hidden" value="BC" name="state" id="state" />
 </form>
 
