@@ -1,4 +1,8 @@
-_old/*
-node_modules/*
-_dev/Build/*
+_old/
+node_modules/
 configuration.php
+Build/
+_dev/Build/
+_dev/Build/404.html
+
+_dev/Build/assets/css/style.css
