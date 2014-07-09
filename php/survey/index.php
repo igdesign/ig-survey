@@ -8,29 +8,18 @@ $config = new Configuration;
  * CORS
  */
 if (!isset($_SERVER['HTTP_ORIGIN'])) {
-  $_SERVER['HTTP_ORIGIN'] = null;
+  $_SERVER['HTTP_ORIGIN'] = 'http://survey.igdesign.ca';
 }
+switch ($_SERVER['HTTP_ORIGIN']) {
+  case 'http://'.$config->site_url:
+  case 'https://'.$config->site_url:
 
-if ($config->dev === true) {
-  header('Access-Control-Allow-Origin: *');
-  header('Access-Control-Allow-Methods: GET, POST');
-  header('Access-Control-Max-Age: 1000');
-  header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
-
-
-} else {
-  switch ($_SERVER['HTTP_ORIGIN']) {
-    case 'http://'.$config->site_url:
-    case 'https://'.$config->site_url:
-
-      header('Access-Control-Allow-Origin: '.$_SERVER['HTTP_ORIGIN']);
-      header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-      header('Access-Control-Max-Age: 1000');
-      header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
-      break;
-  }
+    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Max-Age: 1000');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+    break;
 }
-
 
 
 
@@ -54,7 +43,6 @@ function recordData()
   /**
    * Setup Survey
    */
-
   $survey = new SurveyFunctions();
 
   // check post data
@@ -77,6 +65,7 @@ function recordData()
 
 function processRequest()
 {
+
   // return location value
   if (isset($_GET['location']))
   {

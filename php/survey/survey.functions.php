@@ -217,7 +217,7 @@ class SurveyFunctions
 
     // get ip address
     $ipAddress = $_SERVER['REMOTE_ADDR'];
-    $ipAddress = '96.54.0.215'; // TEMPORARY
+//     $ipAddress = '96.54.0.215'; // TEMPORARY
 
     // split ipAddress into usable chunks
     $ipAddress = explode('.', $ipAddress);
@@ -252,11 +252,11 @@ class SurveyFunctions
     $response = $connection->query($query);
 
 
-
     if($response === false) {
       trigger_error('Wrong SQL: ' . $query . ' Error: ' . $connection->error, E_USER_ERROR);
       return false;
     }
+
 
     while($row = $response->fetch_assoc()){
       $location = $row['locId'];
