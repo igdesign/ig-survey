@@ -81,6 +81,13 @@ function processRequest()
   {
     $survey = new SurveyFunctions();
     $entries = $survey->getEntries();
+
+    header("Content-type: text/csv");
+    header("Content-Disposition: attachment; filename=survey_results-".date("Y-m-d H:i:s").".csv");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+
+    echo $entries;
     return;
   }
 }

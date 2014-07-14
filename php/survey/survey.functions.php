@@ -344,8 +344,8 @@ class SurveyFunctions
     }
 
 
-    $column_header = array();
-    $rows = array();
+    $column_header = array('id', 'email', 'datetime', 'ipaddress', 'state');
+    $rows = array();;
 
     while ($row = $response->fetch_object()) {
 
@@ -357,15 +357,18 @@ class SurveyFunctions
         $column_header[$field] = $field;
       }
       unset($row->jsondata);
-      $rows[] = implode(', ', (array) $row);
+      $rows[] = implode(",\t", (array) $row);
 
 
 
     }
-    echo implode(', ', $column_header)."\n";
+    $results = implode(",\t", $column_header)."\n";
+
 
     foreach($rows as $row) {
-      echo $row."\n";
+      $results .= $row."\n";
     }
+
+    return $results;
   }
 }
